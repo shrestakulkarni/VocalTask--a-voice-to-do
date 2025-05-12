@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CSS & Daisy UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>TO-DOIT</title>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-base-200">
+
+    <!-- Theme Toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-accent m-1">
+                <i class='bx bx-palette bx-sm'></i> Theme
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-200 rounded-box w-52">
+                <li><a href="#" data-theme="light">Light</a></li>
+                <li><a href="#" data-theme="dark">Dark</a></li>
+                <li><a href="#" data-theme="cupcake">Cupcake</a></li>
+                <li><a href="#" data-theme="bumblebee">Bumblebee</a></li>
+                <li><a href="#" data-theme="retro">Retro</a></li>
+                <li><a href="#" data-theme="cyberpunk">Cyberpunk</a></li>
+                <li><a href="#" data-theme="luxury">Luxury</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Dashboard Button -->
+    <div class="fixed top-4 left-4 z-50">
+       <!-- <button onclick="window.location.href='dashboard.html'" class="btn btn-primary m-1">
+            <i class='bx bx-dashboard bx-sm'></i> Dashboard
+        </button>
+    </div>--> 
+
+    <!-- Container -->
+    <div class="container bg-base-100 shadow-lg rounded-lg p-6 w-full max-w-3xl">
+        <header class="text-center mb-4">
+            <h1 class="text-2xl font-bold">📊 Daily Productivity Insights</h1>
+        </header>
+
+        <div class="alert-message"></div>
+
+        <!-- Input Section -->
+       <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input type="text" id="task-input" placeholder="Add a todo . . ." class="input input-bordered input-secondary w-full" />
+            <input type="date" id="task-date" class="input input-bordered input-secondary w-full" />
+            <select id="task-category" class="select select-bordered w-full">
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Others">Others</option>
+            </select>
+            <select id="task-priority" class="select select-bordered w-full">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>-->
+
+        <!-- Buttons Section-->
+        <!--<div class="flex justify-center gap-4 mb-4">
+            <button class="btn btn-secondary add-task-button">
+                <i class="bx bx-plus bx-sm"></i> Add Task
+            </button>
+            <button id="voice-btn" class="btn btn-primary">
+                <i class='bx bxs-microphone bx-sm'></i> Voice Input
+            </button>
+        </div>-->
+
+        <!-- Summary Cards Section -->
+        <div class="grid grid-cols-2 gap-4 text-center">
+            <!-- Pending Tasks -->
+            <!-- Pending Tasks -->
+<div class="card bg-purple-800 text-white p-4 shadow-lg rounded-lg">
+    <h3 class="text-lg font-semibold"><i class="bx bx-time-five"></i> Pending Tasks</h3>
+    <p class="text-3xl font-bold" id="pending-count">0</p>
+</div>
+
+
+            <!-- Completed Tasks -->
+            <div class="card bg-success text-white p-4 shadow-lg rounded-lg">
+                <h3 class="text-lg font-semibold"><i class="bx bx-check-circle"></i> Completed</h3>
+                <p class="text-3xl font-bold" id="completed-count">0</p>
+            </div>
+
+            <!-- Today's Tasks -->
+            <div class="card bg-primary text-white p-4 shadow-lg rounded-lg">
+                <h3 class="text-lg font-semibold"><i class="bx bx-calendar-check"></i> Today's Tasks</h3>
+                <p class="text-3xl font-bold" id="today-count">0</p>
+            </div>
+
+            <!-- High Priority Tasks -->
+            <div class="card bg-red-500 text-white p-4 shadow-lg rounded-lg">
+                <h3 class="text-lg font-semibold"><i class="bx bx-error"></i> High Priority</h3>
+                <p class="text-3xl font-bold" id="high-priority-count">0</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Selection Functionality
+        const themeLinks = document.querySelectorAll('.dropdown-content a');
+        const html = document.documentElement;
+
+        themeLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedTheme = link.getAttribute('data-theme');
+                html.setAttribute('data-theme', selectedTheme);
+            });
+        });
+
+        // Dummy Data (You can replace this with real values)
+        document.getElementById("pending-count").innerText = 5;
+        document.getElementById("completed-count").innerText = 10;
+        document.getElementById("today-count").innerText = 3;
+        document.getElementById("high-priority-count").innerText = 2;
+    </script>
+
+    <script src="script.js"></script>
+    <script src="dashUpdate.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
