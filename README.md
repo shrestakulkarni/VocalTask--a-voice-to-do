@@ -1,3 +1,2 @@
 # VocalTask--a-voice-to-do
-
-VocalTask is a Python-based desktop to-do list application that allows users to manage tasks through voice commands. Built using the SpeechRecognition and pyttsx3 libraries, it enables users to add, remove, and view tasks hands-free, making task management more intuitive and efficient. The program provides speech feedback, enhancing interactivity and accessibility for everyday productivity.
+VocalTask is a voice-controlled to-do list web app built using HTML, CSS, and JavaScript. It uses browser-based speech recognition to let users manage tasks hands-free—enabling voice commands to add, delete, or mark tasks. Designed for ease of use and productivity, it provides an intuitive interface to organize daily tasks efficiently.
